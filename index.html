@@ -1,61 +1,106 @@
-<!DOCTYPE html>
+
+  
+   <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Malla Interactiva</title>
+  <title>Mercadeo Internacional UES – Malla Curricular</title>
   <style>
-    body {
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f0f0f0;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(5, 60px);
-      grid-template-rows: repeat(5, 60px);
-      gap: 5px;
-    }
-    .cell {
-      background-color: #ffffff;
-      border: 1px solid #ccc;
-      cursor: pointer;
-      transition: background-color 0.2s;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: bold;
-    }
-    .cell:hover {
-      background-color: #d0eaff;
-    }
-    .cell.active {
-      background-color: #4caf50;
-      color: white;
-    }
+    body { font-family: sans-serif; background: #f1f8e9; padding: 20px; margin: 0; color:#333; }
+    h1 { text-align: center; color: #2e7d32; }
+    .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .semester { background: white; border-radius: 8px; padding: 12px; width: 200px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .semester h2 { text-align: center; color: #1b5e20; font-size: 1.1em; }
+    .course { background: #c8e6c9; margin: 6px 0; padding: 6px; border-radius:4px; cursor:pointer; transition:0.2s; text-align:center; font-size:0.9em; }
+    .course:hover { background: #81c784; color: white; }
+    .highlight { background: #388e3c !important; color: white; }
   </style>
 </head>
 <body>
+<h1>Licenciatura en Mercadeo Internacional – UES</h1>
+<div class="grid">
 
-<div class="grid" id="grid"></div>
+  <!-- Ciclos 1 a 10 -->
+  <div class="semester"><h2>Ciclo 1</h2>
+    <div class="course">Introducción a la Economía I</div>
+    <div class="course">Matemática I</div>
+    <div class="course">Sociología General</div>
+    <div class="course">Técnicas de Expresión Escrita y Oral</div>
+    <div class="course">Inglés I</div>
+  </div>
+
+  <div class="semester"><h2>Ciclo 2</h2>
+    <div class="course">Estadística I</div>
+    <div class="course">Contabilidad Financiera I</div>
+    <div class="course">Microeconomía</div>
+    <div class="course">Psicología del Consumidor</div>
+    <div class="course">Inglés II</div>
+  </div>
+
+  <div class="semester"><h2>Ciclo 3</h2>
+    <div class="course">Estadística II</div>
+    <div class="course">Contabilidad Financiera II</div>
+    <div class="course">Macroeconomía</div>
+    <div class="course">Mercadeo I</div>
+    <div class="course">Inglés III</div>
+  </div>
+
+  <div class="semester"><h2>Ciclo 4</h2>
+    <div class="course">Comercio Internacional I (CIN118)</div>
+    <div class="course">Mercadeo Internacional I</div>
+    <div class="course">Derecho Mercantil y Aduanero</div>
+    <div class="course">Técnicas de Administración Financiera I</div>
+    <div class="course">Inglés IV</div>
+  </div>
+
+  <div class="semester"><h2>Ciclo 5</h2>
+    <div class="course">Administración de Empresas I</div>
+    <div class="course">Costos y Precios</div>
+    <div class="course">Gerencia de Mercadeo Estratégica</div>
+    <div class="course">Mercadeo Internacional II (MIN218)</div>
+    <div class="course">Ética Profesional</div>
+  </div>
+
+  <div class="semester"><h2>Ciclo 6</h2>
+    <div class="course">Mercadeo Internacional II continuará</div>
+    <div class="course">Investigación de Mercados</div>
+    <div class="course">Técnicas Presupuestarias</div>
+    <div class="course">Ventas Internacionales II</div>
+    <div class="course">Inglés V</div>
+  </div>
+
+  <div class="semester"><h2>Ciclo 7</h2>
+    <div class="course">Planeación de Mercadeo Internacional</div>
+    <div class="course">Gerencia de Nuevos Productos</div>
+    <div class="course">Desarrollo de Marcas Internacionales</div>
+    <div class="course">Seminario Integrador de Comercio Internacional</div>
+    <div class="course">Decisiones Gerenciales</div>
+  </div>
+
+  <div class="semester"><h2>Ciclo 8</h2>
+    <div class="course">Seminario Integrador (continuación)</div>
+    <div class="course">Metodología de Investigación Profesional</div>
+    <div class="course">Ética del Comercio Internacional</div>
+    <div class="course">DNP118 (negociación)</div>
+    <div class="course">Materia Complementaria 💡</div>
+  </div>
+
+  <div class="semester"><h2>Ciclo 9</h2>
+    <div class="course highlight">Trabajo de Graduación (tesis o proyecto)</div>
+  </div>
+
+  <div class="semester"><h2>Ciclo 10</h2>
+    <div class="course highlight">Electiva: Publicidad y Promoción Internacional</div>
+    <div class="course highlight">Electiva: Mercadeo de Servicios</div>
+    <div class="course highlight">Electiva: Gestión y Aseguramiento de la Calidad</div>
+  </div>
+
+</div>
 
 <script>
-  const grid = document.getElementById('grid');
-
-  for (let i = 0; i < 25; i++) {
-    const cell = document.createElement('div');
-    cell.classList.add('cell');
-    cell.textContent = i + 1;
-
-    cell.addEventListener('click', () => {
-      cell.classList.toggle('active');
-    });
-
-    grid.appendChild(cell);
-  }
+  document.querySelectorAll('.course').forEach(c => {
+    c.addEventListener('click', () => c.classList.toggle('highlight'));
+  });
 </script>
-
 </body>
 </html>
